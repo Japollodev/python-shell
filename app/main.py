@@ -8,13 +8,19 @@ def main():
 
     while sentinel :
         sys.stdout.write("$ ")
+        # User input
         command = input()
+        # Find out the firs command Index
         index = command.find(" ")
-        initial_command = command[:index + 1]
+        # Fist Command
+        initial_command = command[:index + 1] or command
+         # Argument passed with the command
         arguments = command[index + 1:]
+        # Notify  user if the command is not found in acceptable list
         if initial_command not in command_list:
             print(f"{initial_command}: command not found")
-        if initial_command == "exit" :
+        # End run of program if user enters exit
+        if command == "exit" :
             sentinel = False
             break
         if command.startswith("echo ") :
