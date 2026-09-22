@@ -9,13 +9,14 @@ def main():
     while sentinel :
         sys.stdout.write("$ ")
         command = input()
-        if command not in command_list:
-            print(f"{command}: command not found")
-        if command == "exit" :
+        index = command.find(" ") + 1
+        initial_command = command[:index]
+        if initial_command not in command_list:
+            print(f"{initial_command}: command not found")
+        if initial_command == "exit" :
             sentinel = False
             break
         if command.startswith("echo ") :
-            index = command.find(" ") + 1
             output = command[index:]
             print(f"{command}: {output}")
 
