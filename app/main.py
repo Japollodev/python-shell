@@ -5,7 +5,11 @@ def main():
     # TODO: Uncomment the code below to pass the first stage
     sys.stdout.write("$ ")
     pass
+    command_list = {}
+    command = input("$")
 
+    if command not in command_list:
+        print(f"{command}: command not found")
 
 if __name__ == "__main__":
     main()
