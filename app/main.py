@@ -11,7 +11,7 @@ def main():
         command = input()
         index = command.find(" ")
         initial_command = command[:index]
-        arguments = command[index:]
+        arguments = command[index + 1:]
         if initial_command not in command_list:
             print(f"{initial_command}: command not found")
         if initial_command == "exit" :
