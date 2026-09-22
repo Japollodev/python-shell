@@ -9,7 +9,7 @@ def main():
     while sentinel :
         sys.stdout.write("$ ")
         command = input()
-        index = command.find(" ") + 1
+        index = command.find(" ")
         initial_command = command[:index]
         arguments = command[index:]
         if initial_command not in command_list:
