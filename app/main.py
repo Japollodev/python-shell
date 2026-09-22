@@ -11,14 +11,14 @@ def main():
         command = input()
         index = command.find(" ")
         initial_command = command[:index]
+        arguments = command[index+1:]
         if initial_command not in command_list:
             print(f"{initial_command}: command not found")
         if initial_command == "exit" :
             sentinel = False
             break
         if command.startswith("echo ") :
-            output = command[index:]
-            print(f"{output}")
+            print(f"{arguments}")
 
 
 if __name__ == "__main__":
