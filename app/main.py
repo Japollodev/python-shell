@@ -10,19 +10,19 @@ def main():
         sys.stdout.write("$ ")
         # User input
         command = input()
-        # Find out the firs command Index
-        index = command.find(" ")
-
-        has_args = index >= 0
+        # segment the user's input to command + args
+        command_split = command.split(" ")
         # Fist Command
-        initial_command = command[:index] if has_args else command
-         # Argument passed with the command
-        arguments = command[index + 1:] if has_args else ''
+        initial_command = command_split[0]
+        # Argument passed with the command
+        comm_len = len(command_split)
+        # Make sure to not remove space for join
+        arguments = " ".join(command_split[1:]) if len(command_split) > 1 else ""
+
 
         if initial_command in command_list:
-            print(f"{initial_command}: command not found")
             # End run of program if user enters exit
-            if command == "exit" :
+            if command == "exit" or command.startswith("exit") :
                 sentinel = False
                 break
             if command.startswith("echo ") :
@@ -37,8 +37,7 @@ def main():
 
         # Notify  user if the command is not found in acceptable list
         else:
-            if initial_command == "echo":
-                sentinel = False
+            print(f"{initial_command}: command not found")
 
 
 if __name__ == "__main__":
