@@ -18,7 +18,7 @@ def main():
             break
         if command.startswith("echo ") :
             output = command[index:]
-            print(f"{initial_command}: {output}")
+            print(f"{output}")
 
 
 if __name__ == "__main__":
