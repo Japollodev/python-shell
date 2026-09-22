@@ -10,7 +10,7 @@ def main():
         sys.stdout.write("$ ")
         command = input()
         index = command.find(" ")
-        initial_command = command[:index]
+        initial_command = command[:index + 1]
         arguments = command[index + 1:]
         if initial_command not in command_list:
             print(f"{initial_command}: command not found")
