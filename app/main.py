@@ -9,9 +9,9 @@ def main():
     while sentinel :
         sys.stdout.write("$ ")
         command = input()
-        index = command.find(" ")
+        index = command.find(" ") + 1
         initial_command = command[:index]
-        arguments = command[index+1:]
+        arguments = command[index:]
         if initial_command not in command_list:
             print(f"{initial_command}: command not found")
         if initial_command == "exit" :
