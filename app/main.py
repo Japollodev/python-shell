@@ -6,7 +6,7 @@ def main():
     sys.stdout.write("$ ")
     pass
     command_list = {}
-    command = input("$")
+    command = input()
 
     if command not in command_list:
         print(f"{command}: command not found")
