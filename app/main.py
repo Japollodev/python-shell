@@ -7,13 +7,14 @@ def main():
     sentinel = True
 
     while sentinel :
-        sys.stdout.write("$ ")
+        sys.stdout.write("$")
         # User input
         command = input()
         # Find out the firs command Index
         index = command.find(" ")
         # Fist Command
-        initial_command = command[:index + 1] or command
+        initial_command = command[:index] or command
+        print(initial_command,":", command)
          # Argument passed with the command
         arguments = command[index + 1:]
         # Notify  user if the command is not found in acceptable list
