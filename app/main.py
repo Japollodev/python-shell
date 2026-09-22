@@ -7,7 +7,7 @@ def main():
     sentinel = True
 
     while sentinel :
-        sys.stdout.write("$")
+        sys.stdout.write("$ ")
         # User input
         command = input()
         # Find out the firs command Index
