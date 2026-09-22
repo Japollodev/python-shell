@@ -14,9 +14,9 @@ def main():
         index = command.find(" ")
         # Fist Command
         initial_command = command[:index] or command
-        print(initial_command,":", command)
          # Argument passed with the command
         arguments = command[index + 1:]
+        print(arguments, "<<<<")
         # Notify  user if the command is not found in acceptable list
         if initial_command not in command_list:
             print(f"{initial_command}: command not found")
